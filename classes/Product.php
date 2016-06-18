@@ -6144,4 +6144,14 @@ class ProductCore extends ObjectModel
         return Db::getInstance()->execute('UPDATE '._DB_PREFIX_.'product p
 		'.Shop::addSqlAssociation('product', 'p').' SET product_shop.pack_stock_type = '.(int)$pack_stock_type.' WHERE p.`id_product` = '.(int)$id_product);
     }
+    /**
+     *@desc get product data list
+     *@author
+     *@date 2016/06/18
+     */
+    public function getProductList(){
+        $sql = "SELECT * FROM ps_product LIMIT 0,5";
+        $result = Db::getInstance()->executeS($sql);
+        return $result;
+    }
 }
