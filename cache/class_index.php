@@ -815,6 +815,12 @@
     'type' => 'class',
     'override' => false,
   ),
+    'AdminInterfaceControllerCore' =>
+    array (
+        'path' => 'controllers/admin/AdminInterfaceController.php',
+        'type' => 'class',
+        'override' => false,
+    ),
   'AdminProfilesController' => 
   array (
     'path' => '',
