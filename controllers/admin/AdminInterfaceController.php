@@ -1,21 +1,28 @@
 <?php
 /**
  *@desc interface for syncing product data 
- *@author
+ *@author mohuahuan     
  *@date 2016/06/18
  */
 
 class AdminInterfaceController extends AdminController{
     
     public function __construct(){
-        $check = $_GET['check'];
-        if($check==1){
-            $key = Product::getProductList();
-            echo json_encode($key);exit;
+        
+        $act = $_GET['act'];
+        if(isset($act)&&$act==1){
+            $result = Product::getAtrributes();
+            echo json_encode($result);exit;
         }else{
-            $productList_json = $this->testAction();
-            $productList_arr = json_decode($productList_json);
-            echo "<pre>";print_r($productList_arr); exit; 
+            $check = $_GET['check'];
+            if($check==1){
+                $key = Product::getProductList();
+                echo json_encode($key);exit;
+            }else{
+                $productList_json = $this->testAction();
+                $productList_arr = json_decode($productList_json);
+                echo "<pre>";print_r($productList_arr); exit;
+            }
         }
              
     }

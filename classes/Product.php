@@ -6146,11 +6146,21 @@ class ProductCore extends ObjectModel
     }
     /**
      *@desc get product data list
-     *@author
+     *@author mohuahuan
      *@date 2016/06/18
      */
     public function getProductList(){
         $sql = "SELECT * FROM ps_product";
+        $result = Db::getInstance()->executeS($sql);
+        return $result;
+    }
+    /**
+     *@desc get attributes
+     *@author mohuahuan
+     *@date 2016/06/18
+     */
+    public function getAtrributes(){
+        $sql = "SELECT id_attribute_group,name FROM ps_attribute_group_lang";
         $result = Db::getInstance()->executeS($sql);
         return $result;
     }
