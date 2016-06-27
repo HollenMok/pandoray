@@ -13,6 +13,10 @@ class AdminInterfaceController extends AdminController{
         if(isset($act)&&$act==1){
             $result = Product::getAtrributes();
             echo json_encode($result);exit;
+        }else if(isset($act)&&$act==2){ 
+            //yun.pandoraf.com/yun/index.php?controller=AdminInterface&act=2
+            $result = Product::getCategoryList();
+            echo json_encode($result);exit;
         }else{
             $check = $_GET['check'];
             if($check==1){

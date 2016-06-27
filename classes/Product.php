@@ -6164,4 +6164,14 @@ class ProductCore extends ObjectModel
         $result = Db::getInstance()->executeS($sql);
         return $result;
     }
+    /**
+     *@desc get categories
+     *@author mohuahuan
+     *@date 2016/06/18
+     */
+    public function getCategoryList(){
+        $sql = "SELECT id_category,id_parent FROM ps_category";
+        $result = Db::getInstance()->executeS($sql);
+        return $result;
+    }
 }
